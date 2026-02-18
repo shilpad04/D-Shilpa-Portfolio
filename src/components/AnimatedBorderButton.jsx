@@ -31,7 +31,8 @@ export const AnimatedBorderButton = ({ children }) => {
         />
       </svg>
       <span className="relative z-10 flex items-center justify-center gap-2">
-        {children}
+        <Download className="w-4 h-4" />
+        Download CV
       </span>
     </button>
   );
