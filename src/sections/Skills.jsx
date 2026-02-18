@@ -35,14 +35,11 @@ export const Skills = () => {
     <section
       id="skills"
       ref={sectionRef}
-      className="py-28 lg:py-32 relative"
+      className="py-20 lg:py-32 relative"
     >
       <div className="max-w-6xl mx-auto px-6">
-
-        {/* Updated Grid */}
         <div className="grid lg:grid-cols-[1fr_1.4fr] gap-16 items-center">
 
-          {/* LEFT SIDE */}
           <div className="flex justify-center lg:justify-start items-center">
             <h2
               className={`text-4xl font-bold text-primary glow-text transition-all duration-700 ${
@@ -53,9 +50,7 @@ export const Skills = () => {
             </h2>
           </div>
 
-          {/* RIGHT SIDE */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
-
             {skills.map((skill, index) => (
               <div
                 key={skill.name}
@@ -76,11 +71,9 @@ export const Skills = () => {
                 </span>
               </div>
             ))}
-
           </div>
 
         </div>
-
       </div>
     </section>
   );
