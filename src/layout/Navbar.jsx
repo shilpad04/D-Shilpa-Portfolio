@@ -7,7 +7,6 @@ const navLinks = [
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
-  { href: "#certificates", label: "Certificates" },
 ];
 
 export const Navbar = () => {
@@ -20,7 +19,6 @@ export const Navbar = () => {
                  border-b border-border/40"
     >
       <nav className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-        
         {/* Logo */}
         <a
           href="#"
@@ -45,7 +43,9 @@ export const Navbar = () => {
             ))}
           </div>
 
-          <Button size="sm">Contact Me</Button>
+          <a href="#contact">
+            <Button size="sm">Contact Me</Button>
+          </a>
         </div>
 
         {/* Mobile Button */}
@@ -72,7 +72,9 @@ export const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <Button>Contact Me</Button>
+            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+              <Button>Contact Me</Button>
+            </a>
           </div>
         </div>
       )}

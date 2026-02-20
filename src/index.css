@@ -26,7 +26,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px; 
+    scroll-padding-top: 100px;
   }
 
   body {
@@ -151,5 +151,10 @@
     background-color: color-mix(in srgb, #26c4b8 15%, transparent);
     backdrop-filter: blur(16px);
     box-shadow: 0 0 20px color-mix(in srgb, #26c4b8 20%, transparent);
+  }
+
+  .experience-flip-active {
+    transform: perspective(1000px) rotateX(2deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   }
 }

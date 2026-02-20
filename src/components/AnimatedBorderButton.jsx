@@ -1,9 +1,10 @@
-import { Download } from "lucide-react";
-
-export const AnimatedBorderButton = ({ children }) => {
+export const AnimatedBorderButton = ({ children, href }) => {
   return (
-    <button
-      className="relative bg-transparent border border-border 
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="relative inline-block bg-transparent border border-border 
         text-foreground hover:border-primary/50 transition-all 
         duration-1000 focus:outline-none focus-visible:ring-2 
         focus-visible:ring-primary focus-visible:ring-offset-2 
@@ -30,10 +31,10 @@ export const AnimatedBorderButton = ({ children }) => {
           className="animated-border-path"
         />
       </svg>
+
       <span className="relative z-10 flex items-center justify-center gap-2">
-        <Download className="w-4 h-4" />
-        Download CV
+        {children}
       </span>
-    </button>
+    </a>
   );
 };

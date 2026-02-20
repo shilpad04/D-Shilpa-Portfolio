@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Github, Linkedin } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Download } from "lucide-react";
 import { Button } from "../components/Button";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
@@ -20,8 +20,8 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[85vh] lg:min-h-[90vh] flex items-start lg:items-center overflow-hidden pt-28 pb-16">
-
+    <section className="relative min-h-[80vh] lg:min-h-[85vh] flex items-start lg:items-center overflow-hidden pt-24 lg:pt-28 pb-12 lg:pb-16 animate-fade-in">
+      {" "}
       {/* Background */}
       <div className="absolute inset-0">
         <img
@@ -31,7 +31,6 @@ export const Hero = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/60 to-background" />
       </div>
-
       {/* Floating Dots (Untouched) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {[...Array(30)].map((_, i) => (
@@ -48,23 +47,15 @@ export const Hero = () => {
           />
         ))}
       </div>
-
       {/* Content */}
       <div className="max-w-6xl mx-auto px-6 relative z-10 w-full">
-        
-        {/* ONLY CHANGE IS HERE: gap-16 */}
-        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
-
+        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-14 items-center">
           {/* LEFT SIDE */}
           <div className="space-y-6">
-
             {/* Heading */}
             <div className="space-y-4 animate-fade-in animation-delay-100">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Hi, I'm{" "}
-                <span className="text-primary glow-text">
-                  Shilpa
-                </span>
+                Hi, I'm <span className="text-primary glow-text">Shilpa</span>
               </h1>
             </div>
 
@@ -89,6 +80,7 @@ export const Hero = () => {
               </Button>
 
               <AnimatedBorderButton>
+                <Download className="w-4 h-4" />
                 Download CV
               </AnimatedBorderButton>
             </div>
@@ -103,7 +95,7 @@ export const Hero = () => {
                 rel="noopener noreferrer"
                 className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
               >
-                <Github className="w-5 h-5" />
+                <Github className="w-6 h-6" />
               </a>
 
               <a
@@ -112,41 +104,38 @@ export const Hero = () => {
                 rel="noopener noreferrer"
                 className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-6 h-6" />
               </a>
             </div>
-
           </div>
 
           {/* RIGHT SIDE - PROFILE IMAGE */}
           <div className="flex justify-center lg:justify-end mt-6 lg:mt-0 animate-fade-in animation-delay-300">
-
             <div className="relative w-72 sm:w-80 md:w-96 lg:w-[380px]">
-
               {/* Glow Background */}
-              <div className="absolute inset-0 
+              <div
+                className="absolute inset-0 
                               rounded-3xl
                               bg-gradient-to-br 
                               from-primary/30 via-transparent 
                               to-primary/10 
-                              blur-3xl" />
+                              blur-3xl"
+              />
 
               {/* Image Frame */}
-              <div className="relative rounded-3xl overflow-hidden 
+              <div
+                className="relative rounded-3xl overflow-hidden 
                               border border-border
-                              shadow-[0_0_40px_color-mix(in_srgb,var(--color-primary)_25%,transparent)]">
-
+                              shadow-[0_0_40px_color-mix(in_srgb,var(--color-primary)_25%,transparent)]"
+              >
                 <img
                   src="/shilpa.png"
                   alt="Shilpa"
                   className="w-full aspect-[4/5] object-cover object-center"
                 />
-
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
     </section>

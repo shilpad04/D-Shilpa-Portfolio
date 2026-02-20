@@ -23,10 +23,12 @@ const highlights = [
 
 export const About = () => {
   return (
-    <section id="about" className="py-20 lg:py-28 bg-background relative">
+    <section
+      id="about"
+      className="py-12 lg:py-16 bg-background relative animate-fade-in animation-delay-100"
+    >
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <div className="space-y-8">
             <div className="animate-fade-in">
               <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
@@ -35,30 +37,22 @@ export const About = () => {
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
-              Building clean and scalable web applications
+              Building clean and structured web applications
             </h2>
 
-            <div 
-            className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
+            <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
                 I’m a Full Stack MERN Developer with 1.8 years of experience in
-                a professional software environment. My background includes
-                working on data-driven systems and structured user workflows,
-                which helped me develop a thoughtful approach to application
-                design and backend logic.
+                a professional software environment. I’ve worked on data-driven
+                systems and structured user workflows involving role-based
+                access, validations, and application logic.
               </p>
 
               <p>
-                I enjoy building web applications that balance clean, intuitive
-                interfaces with reliable and well-structured backend systems. I
-                focus on writing clear, maintainable code and designing scalable
-                data models that support real-world use cases.
-              </p>
-
-              <p>
-                I’m particularly interested in creating solutions that not only
-                function efficiently but also provide a smooth and meaningful
-                user experience.
+                I build web applications with clear backend structure,
+                organized data models, and clean frontend implementation. My
+                focus is on maintainability, consistent data flow, and practical
+                system design aligned with real-world requirements.
               </p>
             </div>
           </div>
@@ -73,9 +67,7 @@ export const About = () => {
                   <item.icon className="h-6 w-6" />
                 </div>
 
-                <h3 className="text-lg font-semibold mb-2">
-                  {item.title}
-                </h3>
+                <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
 
                 <p className="text-sm text-muted-foreground">
                   {item.description}
@@ -83,7 +75,6 @@ export const About = () => {
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>

@@ -35,45 +35,58 @@ export const Skills = () => {
     <section
       id="skills"
       ref={sectionRef}
-      className="py-20 lg:py-32 relative"
+      className="py-12 lg:py-16 relative animate-fade-in animation-delay-200"
     >
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-16 items-center">
+        
+        {/* Section Header */}
+        <div className="text-center mb-10">
+          <h2
+            className={`text-4xl md:text-5xl font-bold text-secondary-foreground transition-all duration-700 ${
+              visible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
+            Skills
+          </h2>
 
-          <div className="flex justify-center lg:justify-start items-center">
-            <h2
-              className={`text-4xl font-bold text-primary glow-text transition-all duration-700 ${
-                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
-            >
-              Skills
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
-            {skills.map((skill, index) => (
-              <div
-                key={skill.name}
-                className={`glass skill-glow rounded-xl px-5 py-4
-                           flex items-center gap-3
-                           transition-all duration-500
-                           ${
-                             visible
-                               ? "opacity-100 translate-y-0"
-                               : "opacity-0 translate-y-8"
-                           }`}
-                style={{ transitionDelay: `${index * 70}ms` }}
-              >
-                <i className={`${skill.icon} text-primary text-lg`}></i>
-
-                <span className="text-sm font-medium text-foreground/90">
-                  {skill.name}
-                </span>
-              </div>
-            ))}
-          </div>
-
+          {/* Added Line */}
+          <p
+            className={`text-muted-foreground mt-4 text-sm tracking-wide uppercase transition-all duration-700 ${
+              visible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-6"
+            }`}
+          >
+            Core Technical Skills
+          </p>
         </div>
+
+        {/* Skills Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
+          {skills.map((skill, index) => (
+            <div
+              key={skill.name}
+              className={`glass skill-glow rounded-xl px-5 py-4
+                         flex items-center gap-3
+                         transition-all duration-500
+                         ${
+                           visible
+                             ? "opacity-100 translate-y-0"
+                             : "opacity-0 translate-y-8"
+                         }`}
+              style={{ transitionDelay: `${index * 70}ms` }}
+            >
+              <i className={`${skill.icon} text-primary text-lg`}></i>
+
+              <span className="text-sm font-medium text-foreground/90">
+                {skill.name}
+              </span>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );
