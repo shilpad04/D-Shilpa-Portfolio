@@ -21,22 +21,22 @@ const projects = [
       "https://github.com/shilpad04/Drivio---Online-Vehicle-Rental-Platform",
   },
   {
-    title: "CineScore",
+    title: "TaskFlow",
     description:
-      "Movie discovery app using OMDb API with live search, filters, ratings, favorites (LocalStorage), and responsive UI.",
+      "Full-stack task management app with secure authentication, task prioritization, dashboards, and real-time tracking for efficient daily workflow management.",
     image: "/projects/project2.png",
-    tags: ["Tailwindcss", "ReactJS", "OMDB API"],
-    link: "https://cinescoremovie.netlify.app/",
-    github: "https://github.com/shilpad04/CineScore-",
+    tags: ["React", "Node.js", "Express", "MongoDB", "JWT"],
+    link: "https://flowtask9.netlify.app/",
+    github: "https://github.com/shilpad04/Task-Flow",
   },
   {
-    title: "Drivio Vehicle Rental App",
+    title: "PrepMate",
     description:
-      "Recipe browsing app with search, category & cuisine filters, detailed views, favorites (LocalStorage), and mobile-first design.",
+      "AI-powered interview preparation platform that generates personalized questions, detailed explanations, and structured learning sessions using dynamic user inputs.",
     image: "/projects/project3.png",
-    tags: ["ReactJs", "Tailwindcss", "React Hooks "],
-    link: "https://recipeapptherecipebox.netlify.app/",
-    github: "https://github.com/shilpad04/Recipe-App-The_Recipe_Box",
+    tags: ["React", "Node.js", "MongoDB", "AI Integration", "JWT"],
+    link: "https://prepmate.netlify.app/",
+    github: "https://github.com/shilpad04/PrepMate",
   },
 ];
 
@@ -62,12 +62,10 @@ export const Projects = () => {
       ref={sectionRef}
       className="py-12 lg:py-16 bg-background relative"
     >
-      {/* BG Glows */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        {/* Section Header */}
         <div className="text-center mx-auto max-w-3xl mb-10 lg:mb-14">
           <h2
             className={`text-4xl md:text-5xl font-bold text-secondary-foreground transition-all duration-700 ${
@@ -90,12 +88,11 @@ export const Projects = () => {
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className={`group glass rounded-2xl overflow-hidden transition-all duration-700 ${
+              className={`group relative rounded-2xl border border-border/50 bg-card/60 backdrop-blur-xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 ${
                 visible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-12"
@@ -103,16 +100,17 @@ export const Projects = () => {
               style={{ transitionDelay: `${idx * 150}ms` }}
             >
               {/* Image */}
-              <div className="relative overflow-hidden aspect-video">
+              <div className="relative aspect-video overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
 
-                {/* Overlay Links */}
-                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
+
+                {/* Links (same as before) */}
+                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition">
                   <a
                     href={project.link}
                     target="_blank"
@@ -133,15 +131,13 @@ export const Projects = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6 space-y-4">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
-                </div>
+              <div className="p-5 flex flex-col gap-3">
+                <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
 
-                <p className="text-muted-foreground text-sm">
+                {/* Description with hover expand */}
+                <p className="text-sm text-muted-foreground line-clamp-2 group-hover:line-clamp-none transition-all duration-300">
                   {project.description}
                 </p>
 
@@ -149,7 +145,7 @@ export const Projects = () => {
                   {project.tags.map((tag, tagIdx) => (
                     <span
                       key={tagIdx}
-                      className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
+                      className="text-[11px] px-2.5 py-1 rounded-md bg-muted text-muted-foreground border border-border/40"
                     >
                       {tag}
                     </span>
@@ -160,7 +156,6 @@ export const Projects = () => {
           ))}
         </div>
 
-        {/* CTA */}
         <div
           className={`text-center mt-8 lg:mt-10 transition-all duration-700 ${
             visible
