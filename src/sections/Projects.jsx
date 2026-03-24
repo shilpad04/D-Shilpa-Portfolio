@@ -109,8 +109,8 @@ export const Projects = () => {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
 
-                {/* Links (same as before) */}
-                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition">
+                {/* Desktop Hover Links */}
+                <div className="hidden lg:flex absolute inset-0 items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition">
                   <a
                     href={project.link}
                     target="_blank"
@@ -136,7 +136,6 @@ export const Projects = () => {
                   {project.title}
                 </h3>
 
-                {/* Description with hover expand */}
                 <p className="text-sm text-muted-foreground line-clamp-2 group-hover:line-clamp-none transition-all duration-300">
                   {project.description}
                 </p>
@@ -150,6 +149,26 @@ export const Projects = () => {
                       {tag}
                     </span>
                   ))}
+                </div>
+
+                {/* Mobile + Tablet Buttons */}
+                <div className="flex lg:hidden gap-3 mt-2">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium"
+                  >
+                    Live
+                  </a>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center py-2 rounded-md border border-border text-sm font-medium"
+                  >
+                    GitHub
+                  </a>
                 </div>
               </div>
             </div>
