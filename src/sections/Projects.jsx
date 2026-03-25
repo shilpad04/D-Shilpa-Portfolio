@@ -1,42 +1,41 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Github } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
-
 const projects = [
   {
-    title: "Drivio Vehicle Rental App",
+    title: "Drivio – Vehicle Rental Platform",
     description:
-      "Full-stack vehicle rental platform with role-based access, booking validation, Razorpay integration, admin approvals, dashboards, and automated workflows.",
+      "Production-level MERN application with a multi-role system (Admin, Owner, Renter), real-time booking lifecycle, Razorpay payment integration, vehicle approval workflows, and automated rental management.",
     image: "/projects/project1.png",
     tags: [
-      "Tailwindcss",
       "React",
-      "Expressjs",
-      "Nodejs",
+      "Node.js",
+      "Express",
       "MongoDB",
       "Razorpay",
+      "SendGrid",
     ],
     link: "https://driviocarrental.netlify.app/",
     github:
       "https://github.com/shilpad04/Drivio---Online-Vehicle-Rental-Platform",
   },
   {
-    title: "TaskFlow",
+    title: "PrepMate – AI Interview Prep Platform",
     description:
-      "Full-stack task management app with secure authentication, task prioritization, dashboards, and real-time tracking for efficient daily workflow management.",
-    image: "/projects/project2.png",
-    tags: ["React", "Node.js", "Express", "MongoDB", "JWT"],
-    link: "https://flowtask9.netlify.app/",
-    github: "https://github.com/shilpad04/Task-Flow",
-  },
-  {
-    title: "PrepMate",
-    description:
-      "AI-powered interview preparation platform that generates personalized questions, detailed explanations, and structured learning sessions using dynamic user inputs.",
+      "AI-powered MERN application that generates personalized interview questions and explanations using dynamic inputs, featuring session-based learning, markdown rendering, and an interactive user experience.",
     image: "/projects/project3.png",
     tags: ["React", "Node.js", "MongoDB", "AI Integration", "JWT"],
     link: "https://prepmate.netlify.app/",
     github: "https://github.com/shilpad04/PrepMate",
+  },
+  {
+    title: "TaskFlow – Smart Task Management System",
+    description:
+      "Full-stack task management system with secure authentication, priority-based tracking, productivity dashboard, filtering, and real-time task status insights for efficient workflow management.",
+    image: "/projects/project2.png",
+    tags: ["React", "Node.js", "Express", "MongoDB", "JWT"],
+    link: "https://flowtask9.netlify.app/",
+    github: "https://github.com/shilpad04/Task-Flow",
   },
 ];
 
